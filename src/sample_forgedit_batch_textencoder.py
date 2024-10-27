@@ -137,9 +137,9 @@ if args.edit=='True':
                                                 low_cpu_mem_usage=False).to(device)
 
 #blipmodel="Salesforce/blip-image-captioning-base"
-blipmodel='/mnt/bn/editdiffusion/Forgedit/models/blip-image-captioning-base'
-processor = BlipProcessor.from_pretrained(blipmodel)
-model = BlipForConditionalGeneration.from_pretrained(blipmodel).to("cuda")
+# blipmodel='/mnt/bn/editdiffusion/Forgedit/models/blip-image-captioning-base'
+# processor = BlipProcessor.from_pretrained(blipmodel)
+# model = BlipForConditionalGeneration.from_pretrained(blipmodel).to("cuda")
 
 
 
