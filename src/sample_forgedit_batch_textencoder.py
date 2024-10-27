@@ -132,7 +132,8 @@ device = torch.device('cpu' if not has_cuda else 'cuda')
 
 if args.edit=='True':
     
-    unet_orig = UNet2DConditionModel.from_pretrained(os.path.join(diffusion_dir, 'unet'),
+    unet_orig = UNet2DConditionModel.from_pretrained(diffusion_dir,
+                                                subfolder="unet",
                                                 in_channels=4,
                                                 low_cpu_mem_usage=False).to(device)
 
