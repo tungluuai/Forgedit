@@ -100,7 +100,7 @@ def parse_args(input_args=None):
 args = parse_args()
 MOUNT_OSS_ROOT = '.'
 
-diffusion_dir='/mnt/bn/editdiffusion/Forgedit/models/models--SG161222--Realistic_Vision_V6.0_B1_noVAE/snapshots/7f177697718f088f243fd357263b9f0cb22d0cac'
+diffusion_dir='CompVis/stable-diffusion-v1-4'
 #'SG161222/Realistic_Vision_V6.0_B1_noVAE'#'stable-diffusion-v1-4/'
 
 textlr=1e-3
@@ -171,14 +171,16 @@ seed = 0
 
 
 
-# unconditional image captioning
-inputs = processor(init_image, return_tensors="pt").to("cuda")
+# # unconditional image captioning
+# inputs = processor(init_image, return_tensors="pt").to("cuda")
 
-out = model.generate(**inputs)
-source=processor.decode(out[0], skip_special_tokens=True)
-if 'A photo of ' in prompt:
-    source='A photo of '+source
-print('source=',source)
+# out = model.generate(**inputs)
+# source=processor.decode(out[0], skip_special_tokens=True)
+# if 'A photo of ' in prompt:
+#     source='A photo of '+ source
+# print('source=',source)
+
+source = 'A photo of a couple who are falling in love.'
 
 w,h=args.targetw,args.targeth
 init_image = init_image.resize((w, h))
